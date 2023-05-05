@@ -90,9 +90,9 @@ function createArrow() {
             showNotification("캐릭터에게 몰려오는 화살의 확률이 최대로 증가했습니다.");
         }
     }
-    if (timerElement === 5000) {
+    if (5000 <= timerElement && timerElement <= 5100) {
         clearInterval(arrowCreationInterval);
-        arrowCreationInterval = setInterval(createArrow, 250);
+        arrowCreationInterval = setInterval(createArrow, 200);
         showNotification("화살이 2배로 증가했습니다..");
     }
 
@@ -211,7 +211,7 @@ startButton.addEventListener("click", function(event) {
     // 화살 움직임 시작
     arrowInterval = requestAnimationFrame(moveArrows); // 50ms마다 화살 움직임 업데이트
     // 화살 생성 시작
-    arrowCreationInterval = setInterval(createArrow, 500); // 500ms마다 화살 생성
+    arrowCreationInterval = setInterval(createArrow, 400); // 500ms마다 화살 생성
 
     // 게임 창 크기 조정
     game.style.width = "100%";
